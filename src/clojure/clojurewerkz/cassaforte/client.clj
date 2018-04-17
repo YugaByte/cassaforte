@@ -26,7 +26,6 @@
   (:import [com.datastax.driver.core Statement ResultSet ResultSetFuture Host Session Cluster
             Cluster$Builder SimpleStatement PreparedStatement BoundStatement HostDistance PoolingOptions
             JdkSSLOptions JdkSSLOptions$Builder ProtocolOptions$Compression ProtocolVersion]
-           [com.datastax.driver.auth DseAuthProvider]
            [com.google.common.util.concurrent ListenableFuture Futures FutureCallback]
            [java.net URI]
            [javax.net.ssl TrustManagerFactory KeyManagerFactory SSLContext]
@@ -153,8 +152,6 @@
       (.withSSL builder (build-ssl-options ssl)))
     (when ssl-options
       (.withSSL builder ssl-options))
-    (when kerberos
-      (.withAuthProvider builder (DseAuthProvider.)))
     (.build builder)))
 
 (defn- ^JdkSSLOptions build-ssl-options
