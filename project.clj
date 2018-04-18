@@ -1,4 +1,4 @@
-(defproject clojurewerkz/cassaforte "3.0.0-alpha2-SNAPSHOT"
+(defproject clojurewerkz/cassaforte "3.0.0-alpha2-yb-SNAPSHOT"
   :min-lein-version  "2.5.1"
   :description       "A Clojure client for Apache Cassandra"
   :url               "http://clojurecassandra.info"
@@ -6,6 +6,7 @@
                       :url  "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies      [[org.clojure/clojure                          "1.7.0"]
                       [com.yugabyte/cassandra-driver-core "3.2.0-yb-13"]
+                      [org.apache.commons/commons-lang3 "3.7"]
                       [org.clojure/core.match                       "0.3.0-alpha4"]]
   :aot [clojurewerkz.cassaforte.query]
   :source-paths      ["src/clojure"]

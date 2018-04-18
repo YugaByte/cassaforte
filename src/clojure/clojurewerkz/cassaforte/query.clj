@@ -575,7 +575,7 @@
                         (reduce
                          (fn [opts [option-name option-vals]]
                            ((resolve-create-keyspace-option option-name) opts option-vals))
-                         (.withOptions query-builder)
+                         (.with query-builder)
                          options))
        :if-not-exists (fn if-not-exists-query [query-builder _]
                         (.ifNotExists query-builder))}]
@@ -594,7 +594,7 @@
                         (reduce
                          (fn [opts [option-name option-vals]]
                            ((resolve-create-keyspace-option option-name) opts option-vals))
-                         (.withOptions query-builder)
+                         (.with query-builder)
                          options))}]
   (defn alter-keyspace
     [keyspace-name & statements]
