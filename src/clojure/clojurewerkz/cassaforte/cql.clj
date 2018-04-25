@@ -171,6 +171,10 @@
   (cc/execute session
               (apply query/insert query-params)))
 
+(defn insert-with-ks
+  [^Session session & query-params]
+  (cc/execute session
+              (apply query/insert-with-ks query-params)))
 
 (defn insert-batch
   "Performs a batch insert (inserts multiple records into a table at the same time).
@@ -192,6 +196,11 @@
   (cc/execute session
               (apply query/update query-params)))
 
+(defn update-with-ks
+  [^Session session & query-params]
+  (cc/execute session
+              (apply query/update-with-ks query-params)))
+
 (defn delete
   "Deletes columns and rows. If the `columns` clause is provided,
    only those columns are deleted from the row indicated by the `where` clause, please refer to
@@ -208,6 +217,11 @@
   [^Session session & query-params]
   (cc/execute session
               (apply query/select query-params)))
+
+(defn select-with-ks
+  [^Session session & query-params]
+  (cc/execute session
+              (apply query/select-with-ks query-params)))
 
 (defn truncate
   "Truncates a table: permanently and irreversably removes all rows from the table,

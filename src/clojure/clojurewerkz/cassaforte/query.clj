@@ -162,8 +162,16 @@
                        renderers
                        (if (sequential? (first statements))
                          statements
-                         (conj (next statements) (from (first statements)))))))
+                         (conj (next statements) (from (first statements))))))
 
+  (defn select-with-ks
+    [& statements]
+    (render-statements (QueryBuilder/select)
+                       order
+                       renderers
+                       (if (sequential? (first statements))
+                         statements
+                         (conj (next (next statements)) (from (first statements) (second statements)))))))
 ;;
 ;; INSERT Query
 ;;
@@ -190,6 +198,13 @@
   (defn insert
     [table-name values & statements]
     (render-statements (QueryBuilder/insertInto (name table-name))
+                       order
+                       renderers
+                       (conj statements [:values-map values])))
+
+  (defn insert-with-ks
+    [keyspace-name table-name values & statements]
+    (render-statements (QueryBuilder/insertInto (name keyspace-name) (name table-name))
                        order
                        renderers
                        (conj statements [:values-map values]))))
@@ -243,8 +258,14 @@
     (render-statements (QueryBuilder/update (name table-name))
                        order
                        renderers
-                       (conj statements (update-records-statement records)))))
+                       (conj statements (update-records-statement records))))
 
+(defn update-with-ks
+  [keyspace-name table-name records & statements]
+  (render-statements (QueryBuilder/update (name keyspace-name) (name table-name))
+                     order
+                     renderers
+                     (conj statements (update-records-statement records)))))
 ;;
 ;; Delete Query
 ;;
