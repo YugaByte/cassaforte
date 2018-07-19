@@ -18,7 +18,8 @@
            [com.datastax.driver.core.policies
             LoadBalancingPolicy DCAwareRoundRobinPolicy$Builder RoundRobinPolicy TokenAwarePolicy
             LoggingRetryPolicy DefaultRetryPolicy DowngradingConsistencyRetryPolicy FallthroughRetryPolicy
-            RetryPolicy ConstantReconnectionPolicy ExponentialReconnectionPolicy]))
+            RetryPolicy ConstantReconnectionPolicy ExponentialReconnectionPolicy]
+           [com.yugabyte.driver.core.policies NoRetryOnClientTimeoutPolicy]))
 
 ;;
 ;; Load Balancing
@@ -46,9 +47,10 @@
 ;; Retries
 ;;
 
-(def retry-policies {:default                 (constantly DefaultRetryPolicy/INSTANCE)
-                     :downgrading-consistency (constantly DowngradingConsistencyRetryPolicy/INSTANCE)
-                     :fallthrough             (constantly FallthroughRetryPolicy/INSTANCE)})
+(def retry-policies {:default                    (constantly DefaultRetryPolicy/INSTANCE)
+                     :downgrading-consistency    (constantly DowngradingConsistencyRetryPolicy/INSTANCE)
+                     :fallthrough                (constantly FallthroughRetryPolicy/INSTANCE)
+                     :no-retry-on-client-timeout (constantly NoRetryOnClientTimeoutPolicy/INSTANCE)})
 
 (defn retry-policy
   [rp]

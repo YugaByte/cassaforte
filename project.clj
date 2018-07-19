@@ -5,7 +5,7 @@
   :license           {:name "Eclipse Public License"
                       :url  "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies      [[org.clojure/clojure                          "1.7.0"]
-                      [com.yugabyte/cassandra-driver-core "3.2.0-yb-13"]
+                      [com.yugabyte/cassandra-driver-core "3.2.0-yb-16-SNAPSHOT"]
                       [org.apache.commons/commons-lang3 "3.7"]
                       [org.clojure/core.match                       "0.3.0-alpha4"]]
   :aot [clojurewerkz.cassaforte.query]
