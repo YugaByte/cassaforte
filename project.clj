@@ -1,7 +1,7 @@
-(defproject clojurewerkz/cassaforte "3.0.0-alpha2-yb-SNAPSHOT"
+(defproject com.yugabyte/cassaforte "3.0.0-alpha2-yb-1"
   :min-lein-version  "2.5.1"
-  :description       "A Clojure client for Apache Cassandra"
-  :url               "http://clojurecassandra.info"
+  :description       "A Clojure client for YugaByte that supports Cassandra Query Language and wire protocol"
+  :url               "https://github.com/YugaByte/cassaforte"
   :license           {:name "Eclipse Public License"
                       :url  "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies      [[org.clojure/clojure                          "1.7.0"]
@@ -48,7 +48,7 @@
                                             :releases  {:checksum :fail :update :always}}}
   :global-vars       {*warn-on-reflection* true}
   :pedantic          :warn
-  :codox             {:src-dir-uri               "https://github.com/clojurewerkz/cassaforte/blob/master/"
+  :codox             {:src-dir-uri               "https://github.com/YugaByte/cassaforte/blob/driver-3.0-yb/"
                       :sources                   ["src/clojure/"]
                       :src-linenum-anchor-prefix "L"
                       :exclude                   [clojurewerkz.cassaforte.conversion
