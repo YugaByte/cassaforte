@@ -2,8 +2,10 @@
   :min-lein-version  "2.5.1"
   :description       "A Clojure client for YugaByte that supports Cassandra Query Language and wire protocol"
   :url               "https://github.com/YugaByte/cassaforte"
-  :license           {:name "Eclipse Public License"
-                      :url  "http://www.eclipse.org/legal/epl-v10.html"}
+  :licenses          [{:name "The Apache License, Version 2.0",
+                       :url  "http://www.apache.org/licenses/LICENSE-2.0.html"},
+                      {:name "Eclipse Public License"
+                       :url  "http://www.eclipse.org/legal/epl-v10.html"}]
   :dependencies      [[org.clojure/clojure                          "1.7.0"]
                       [com.yugabyte/cassandra-driver-core "3.2.0-yb-19"]
                       [org.apache.commons/commons-lang3 "3.7"]
@@ -57,5 +59,5 @@
                                                   clojurewerkz.cassaforte.debug
                                                   clojurewerkz.cassaforte.bytes]
                       :output-dir                "doc/api"}
-
-  )
+  :signing           {:gpg-key "YugaByte, Inc."}
+)
