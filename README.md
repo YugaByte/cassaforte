@@ -1,10 +1,9 @@
-# Cassaforte, a Clojure Cassandra Client
+# Clojure client for YugaByte DB's Cassandra compatible YCQL API
 
-Cassaforte is a small, easy to use Clojure client for Apache Cassandra (2.0+)
-built around CQL 3.
+A Clojure client for YugaByte DB that supports Cassandra Query Language and wire protocol derived from Cassaforte, which is a small, easy to use Clojure client for Apache Cassandra (2.0+) built around CQL 3.
 
-For quickstart, please refer to our [Getting Started with Clojure and Cassandra](http://clojurecassandra.info/articles/getting_started.html)
-guide.
+For quickstart, please refer to [Getting Started with Clojure and Cassandra](http://clojurecassandra.info/articles/getting_started.html)
+guide, but use `com.yugabyte/cassaforte` as a dependency.
 
 ## Project Goals
 
@@ -24,14 +23,14 @@ Cassaforte is a moderately mature project. Started in June 2012, it
 has reached `1.0` in July 2013 and `2.0` in December 2014.  It is
 known to be used by dozens of companies, small and large.
 
-Cassaforte is based on the official [DataStax Java driver for Cassandra](https://github.com/datastax/java-driver)
+Cassaforte is based on the [YugaByte Java Driver for YugaByte DB's Cassandra compatible YCQL API](https://github.com/YugaByte/cassandra-java-driver)
 as well as [Hayt](https://github.com/mpenet/hayt), a battle tested CQL generation DSL library.
 
 
 
 ## Dependency Information (Artifacts)
 
-Cassaforte artifacts are [released to Clojars](https://clojars.org/clojurewerkz/cassaforte). If you are using Maven, add the following repository
+Cassaforte artifacts are [released to Clojars](https://clojars.org/com.yugabyte/cassaforte). If you are using Maven, add the following repository
 definition to your `pom.xml`:
 
 ```xml
@@ -46,16 +45,16 @@ definition to your `pom.xml`:
 With Leiningen:
 
 ``` clojure
-[clojurewerkz/cassaforte "2.0.0"]
+[com.yugabyte/cassaforte "3.0.0-alpha2-yb-1"]
 ```
 
 With Maven:
 
 ``` xml
 <dependency>
-  <groupId>clojurewerkz</groupId>
+  <groupId>com.yugabyte</groupId>
   <artifactId>cassaforte</artifactId>
-  <version>2.0.0</version>
+  <version>3.0.0-alpha2-yb-1</version>
 </dependency>
 ```
 
@@ -75,33 +74,17 @@ With Maven:
 Cassaforte supports Clojure 1.6+.
 
 
-## Supported Apache Cassandra Versions
-
-Cassaforte is built from the ground up for CQL.
-2.0 and later versions target Cassandra 2.x.
-
 
 ## Documentation & Examples
 
-Please refer to our [Getting Started with Clojure and Cassandra](http://clojurecassandra.info/articles/getting_started.html)
-guide.
+Please refer to [Getting Started with Clojure and Cassandra](http://clojurecassandra.info/articles/getting_started.html)
+guide, but use `com.yugabyte/cassaforte` as a dependency.
 
 [Documentation guides](http://clojurecassandra.info) are not
 finished and will be improved over time.
 
 [API reference](http://reference.clojurecassandra.info/) is also available.
 
-
-Don't hesitate to join our [mailing
-list](https://groups.google.com/forum/?fromgroups#!forum/clojure-cassandra)
-and ask questions, too!
-
-
-
-## Community
-
-To subscribe for announcements of releases, important changes and so on, please follow
-[@ClojureWerkz](https://twitter.com/#!/clojurewerkz) on Twitter.
 
 
 ## Cassaforte Is a ClojureWerkz Project
@@ -111,13 +94,6 @@ Cassaforte is part of the [group of libraries known as ClojureWerkz](http://cloj
 [Welle](http://clojureriak.info), [Titanium](http://titanium.clojurewerkz.org) and several others.
 
 
-
-## Continuous Integration
-
-[![Continuous Integration status](https://secure.travis-ci.org/clojurewerkz/cassaforte.svg)](http://travis-ci.org/clojurewerkz/cassaforte)
-[![Dependencies Status](http://jarkeeper.com/clojurewerkz/cassaforte/status.svg)](http://jarkeeper.com/clojurewerkz/cassaforte)
-
-CI is hosted by [travis-ci.org](http://travis-ci.org)
 
 
 ## Development
@@ -140,3 +116,7 @@ Copyright (C) 2012-2015 Michael S. Klishin, Alex Petrov, and the ClojureWerkz te
 
 Double licensed under the [Eclipse Public License](http://www.eclipse.org/legal/epl-v10.html) (the same as Clojure) or
 the [Apache Public License 2.0](http://www.apache.org/licenses/LICENSE-2.0.html).
+
+The following only applies to changes made to this file as part of YugaByte development.
+
+Portions Copyright (c) YugaByte, Inc.
